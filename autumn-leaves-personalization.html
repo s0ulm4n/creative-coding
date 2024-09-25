@@ -1,22 +1,5 @@
-<button>Toggle confetti</button>
-<script>
-    const button = document.currentScript.previousElementSibling;
-    button.addEventListener("click", () => {
-        localStorage.setItem(
-            "disable-confetti",
-            localStorage.getItem("disable-confetti") === "true" ? "false" : "true",
-        );
-        button.innerHTML = `Toggled - confetti is now <strong>${localStorage.getItem("disable-confetti") === "true" ? "OFF" : "ON"
-            }</strong> - refresh the page now to see change`;
-    });
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.3/tsparticles.bundle.min.js"></script>
 <script type="module">
-    if (localStorage.getItem("disable-confetti") !== "true") {
-        // Only do it once by default! Refresh the page to stop it
-        localStorage.setItem("disable-confetti", "true");
-
         tsParticles.load({
             id: "tsparticles",
             options: {
@@ -131,5 +114,4 @@
                 },
             },
         });
-    }
 </script>
